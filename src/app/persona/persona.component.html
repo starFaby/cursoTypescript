@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Numero Suerte</th>
+            <th scope="col">Profesional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of personas">
+            <td>{{ item._id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.apellido }}</td>
+            <td>{{ item.suerte }}</td>
+            <td>{{ item.profesional }}</td>
+            <td>
+              <button (click)="eliminarPersona(item._id)" class="btn btn-primary"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <h1>FORMULARIO DE CARGAR PERSONA</h1>
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" [(ngModel)]="addPersona.nombre" class="form-control"  id="nombre" aria-describedby="txtNombre" placeholder="nombre">
+        </div>   
+        <div class="form-group">
+          <label for="txtApellido">Apellido</label>
+          <input type="text"  [(ngModel)]="addPersona.apellido"  class="form-control" id="txtApellido" aria-describedby="txtApellido" placeholder="apellido">
+        </div> 
+        <div class="form-group">
+          <label for="txtNSuerte">Numero Suerte</label>
+          <input type="text" [(ngModel)]="addPersona.suerte"  class="form-control"  id="txtNSuerte" aria-describedby="txtNSuerte" placeholder="numero suerte">
+        </div> 
+        <button type="submit" class="btn btn-primary" (click)="agregarPersona()">GUARDAR</button>
+      </form>
+    </div>
+  </div>
+  <div class="COL-12">
+    <h1>aqui estoy</h1>
+    https://www.youtube.com/watch?v=ucEZfjhrSg4&list=PLZ6WzumExa5WVS0O-oByYH9YYoRrqG8oh&index=51
+  </div>
+</div>

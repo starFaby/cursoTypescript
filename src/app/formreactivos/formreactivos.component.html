@@ -1,0 +1,27 @@
+<div class="container">
+  <form [formGroup]="formulario" (submit)="onsumit(formulario)">
+    <h1>Formulario</h1>
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control" id="Nombre" aria-describedby="emailHelp" placeholder="Name" />
+      <div class="errorcodigo" *ngIf="formulario.controls.nombre.errors">
+        El campo contiene un error
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input type="text" formControlName="apellido" class="form-control" id="Apellido" aria-describedby="emailHelp" placeholder="Apellido" />
+      <div class="errorcodigo" *ngIf="formulario.controls.apellido.errors ">
+          El campo contiene un error
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" formControlName="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+      <div class="errorcodigo" *ngIf="formulario.controls.email.errors">
+          El campo contiene un error
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
